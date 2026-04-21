@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-This project studies how **loop-level code organization** changes performance for dense integer matrix multiplication on pipelined processors. We compare a **baseline GEMM** kernel against **pipeline-aware variants** such as loop unrolling and multiple accumulators, then evaluate both **runtime (simTicks)** and **instruction count (simInststs)** using gem5. The goal is to show how the same workload can behave differently on **TimingSimpleCPU** (in-order, single-cycle) and **MinorCPU** (in-order, pipelined).
+This project studies how **loop-level code organization** changes performance for dense integer matrix multiplication on pipelined processors. We compare a **baseline GEMM** kernel against **pipeline-aware variants** such as loop unrolling and multiple accumulators, then evaluate both **runtime (simTicks)** and **instruction count (simInststs)** using gem5. The goal is to show how the same workload can behave differently on **TimingSimpleCPU (in-order, single-cycle)** and **MinorCPU (in-order, pipelined)**.
 
 <p align="center"><img src="images/dense_int_mm.png" alt="gem5" width=300/></p>
 
@@ -18,7 +18,7 @@ $ ./task5_sen_unrolled4.sh
 
 ## 3. gem5 Results
 
-### 3.1. TimingSimple64
+### 3.1. TimingSimpleCPU
 
 | **Method** | **Metric** | **N = 64** | **N = 128** | **N = 256** |
 |---|---|---:|---:|---:|
@@ -70,7 +70,8 @@ $ ./task5_sen_unrolled4.sh
     - Runtime (`simTicks`):
         - Slightly increases at `N = 64` due to overhead.
         - Slightly decreases at `N = 128` and `N = 256` due to improved ILP from breaking the dependency chain.
-## 5. Design
+
+## 5. Design (Innermost Loop)
 
 ### 5.1. gemm_baseline
 
