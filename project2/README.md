@@ -124,35 +124,42 @@ for (int j = 0; j < N; ++j) {
 ### 5.3. gemm_accum4
 
 ``` cpp
-int row_base = i * N;
-for (int j = 0; j < N; ++j) {
-    int32_t sum = 0;
-    int k = 0;
+int32_t s0 = 0, s1 = 0, s2 = 0, s3 = 0;
+int k = 0;
 
-    // unrolled by 2
-    int A_idx = row_base;
-    int B_idx = j;
+// TODO: student implementation
+// use 4 accumulators
+int A_idx = row_base;
+int B_idx = j;
 
-    for (; k + 1 < N; k += 2) {
-        sum += A[A_idx] * B[B_idx];
-        A_idx++;
-        B_idx += N;
+for (; k + 3 < N; k += 4) {
+    s0 += A[A_idx] * B[B_idx];
+    A_idx++;
+    B_idx += N;
 
-        sum += A[A_idx] * B[B_idx];
-        A_idx++;
-        B_idx += N;
-    }
+    s1 += A[A_idx] * B[B_idx];
+    A_idx++;
+    B_idx += N;
 
-    // handle remaining product
-    for (; k < N; ++k) {
-        sum += A[A_idx] * B[B_idx];
-        A_idx++;
-        B_idx += N;
-    }
+    s2 += A[A_idx] * B[B_idx];
+    A_idx++;
+    B_idx += N;
 
-    // write to element
-    C[row_base + j] = sum;
+    s3 += A[A_idx] * B[B_idx];
+    A_idx++;
+    B_idx += N;
 }
+
+// handle remaining products
+int32_t tail = 0;
+for (; k < N; ++k) {
+    tail += A[A_idx] * B[B_idx];
+    A_idx++;
+    B_idx += N;
+}
+
+// write to element
+C[row_base + j] = s0 + s1 + s2 + s3 + tail;
 ```
 
 ## 6. Analysis
@@ -249,5 +256,5 @@ $ ./task6_disassemble.sh
 
 ## 7. Final Verdict
 
-* From the disassembled kernels, we can observe that for **-O2** compiler optimization, both the **unrolled** and **accum** versions generate equivalent assembly instructions.
-* Therefore, there is no noticeable difference between the two versions (it is unclear why **accum** versions’ **simTicks** is slightly lower than that of **unroll**)
+* From the disassembled kernels, we can observe that for **-O2** compiler optimization, both the **unrolled** and **accum** versions generate similar assembly instructions in the innermost loop.
+* Therefore, there is no noticeable difference between the two versions (it is unclear why **accum** versions’ **simTicks** is slightly lower than that of **unroll**).
