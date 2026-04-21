@@ -12,7 +12,7 @@ $ ./task5_sen_unrolled4
 
 ## gem5 Results
 
-| Method | Metric | 64 | 128 | 256 | 64 | 128 | 256 |
+| Method | Metric | 64 (TimingSimpleCPU) | 128 (TimingSimpleCPU) | 256 (TimingSimpleCPU) | 64 (MinorCPU) | 128 (MinorCPU) | 256 (MinorCPU) |
 |---|---|---:|---:|---:|---:|---:|---:|
 | baseline | simTicks | 3,796,890,500 | 69,145,992,500 | 683,895,369,500 | 2,459,738,000 | 65,330,726,000 | 683,895,369,500 |
 | baseline | simInsts | 5,009,751 | 31,249,382 | 238,959,804 | 5,009,954 | 31,249,312 | 238,959,804 |
