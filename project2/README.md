@@ -71,7 +71,9 @@ $ ./task5_sen_unrolled4.sh
         - Slightly increases at `N = 64` due to overhead.
         - Slightly decreases at `N = 128` and `N = 256` due to improved ILP from breaking the dependency chain.
 
-## 5. Design (Innermost Loop)
+## 5. Design
+
+* only the innermost loop computation is shown here
 
 ### 5.1. gemm_baseline
 
