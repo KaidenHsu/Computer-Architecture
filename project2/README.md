@@ -4,9 +4,7 @@
 
 This project studies how **loop-level code organization** changes performance for dense integer matrix multiplication on pipelined processors. We compare a **baseline GEMM** kernel against **pipeline-aware variants** such as loop unrolling and multiple accumulators, then evaluate both **runtime (simTicks)** and **instruction count (simInststs)** using gem5. The goal is to show how the same workload can behave differently on **TimingSimpleCPU** (in-order, single-cycle) and **MinorCPU** (in-order, pipelined).
 
-``` text
-C = A * B
-```
+<p align="center"><img src="images/dense_int_mm.png" alt="gem5" width=300/></p>
 
 ## 2. Usage
 
