@@ -6,7 +6,7 @@ projects for "Computer Architecture (2026 Spring)" in NSYSU, Taiwan
 
  Projects   | Descriptions
 --------|:-----
-[Project1][1]| Algorithm Optimization and Custom Instruction Proposal
+[Project1][1]| Algorithmic Optimization and Custom Instruction Proposal
 [Project2][2]| Loop Unrolling and Multiple Accumulators
 
 [1]: project1/
