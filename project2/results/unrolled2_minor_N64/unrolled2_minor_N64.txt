@@ -1,0 +1,20 @@
+$ /opt/gem5/build/RISCV/gem5.opt /work/project2_starter/run_minor.py --binary /work/project2_starter/gemm.riscv --n 64 --mode unrolled2 
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started Apr 20 2026 07:22:59
+gem5 executing on 94863c3e74da, pid 1271489
+command line: /opt/gem5/build/RISCV/gem5.opt /work/project2_starter/run_minor.py --binary /work/project2_starter/gemm.riscv --n 64 --mode unrolled2
+
+N=64
+mode=unrolled2
+checksum=4954776778722876215
+correct=yes
+host_ms=0.633
+
+$ python3 /work/project2_starter/parse_stats.py /work/project2_starter/results//unrolled2_minor_N64//stats.txt 
+sim_ticks        2,285,261,500
+sim_insts        4,768,365
