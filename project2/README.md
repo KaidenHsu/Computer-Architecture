@@ -1,6 +1,6 @@
 # Project 2. Loop Unrolling and Multiple Accumulators
 
-## Usage
+## 1. Usage
 
 ``` bash
 $ ./task1_baseline.sh
@@ -10,9 +10,9 @@ $ ./task5_sen_accum2.sh
 $ ./task5_sen_unrolled4.sh
 ```
 
-## gem5 Results
+## 2. gem5 Results
 
-### TimingSimple64
+### 2.1. TimingSimple64
 
 | **Method** | **Metric** | **N = 64** | **N = 128** | **N = 256** |
 |---|---|---:|---:|---:|
@@ -27,7 +27,7 @@ $ ./task5_sen_unrolled4.sh
 | **accum4** | **simTicks** | 3,547,963,500 | ***96,045,579,500*** | ***1,225,734,373,000*** |
 |  | **simInsts** | 4,694,512 | 28,391,452 | 214,919,382 |
 
-### MinorCPU
+### 2.2. MinorCPU
 
 | **Method** | **Metric** | **N = 64** | **N = 128** | **N = 256** |
 |---|---|---:|---:|---:|
@@ -45,7 +45,7 @@ $ ./task5_sen_unrolled4.sh
 * Note: ***Bold-italic values*** represent performance degradation compared to baseline.
 * this experiment is based on **-O2** optimization
 
-## Conclusion
+## 3. Conclusion
 
 - **Loop unrolling alone**
     - Slightly decreases instruction count (`simInsts`).
@@ -64,9 +64,9 @@ $ ./task5_sen_unrolled4.sh
     - Runtime (`simTicks`):
         - Slightly increases at `N = 64` due to overhead.
         - Slightly decreases at `N = 128` and `N = 256` due to improved ILP from breaking the dependency chain.
-## Design
+## 4. Design
 
-### gemm_baseline
+### 4.1. gemm_baseline
 
 ``` cpp
 int row_base = i * N;
@@ -79,7 +79,7 @@ for (int j = 0; j < N; ++j) {
 }
 ```
 
-### gemm_unrolled2
+### 4.2. gemm_unrolled2
 
 ``` cpp
 int row_base = i * N;
@@ -113,7 +113,7 @@ for (int j = 0; j < N; ++j) {
 }
 ```
 
-### gemm_accum4
+### 4.3. gemm_accum4
 
 ``` cpp
 int row_base = i * N;
@@ -147,13 +147,13 @@ for (int j = 0; j < N; ++j) {
 }
 ```
 
-## Analysis
+## 5. Analysis
 
 ``` bash
 $ ./task6_disassemble.sh
 ```
 
-### gemm_baseline
+### 5.1. gemm_baseline
 
 ``` asm
 // ======================= O(N^3) ==========================
@@ -170,7 +170,7 @@ $ ./task6_disassemble.sh
 // ======================= END O(N^3) ==========================
 ```
 
-### gemm_unrolled2
+### 5.2. gemm_unrolled2
 
 ``` asm
 // ======================= O(N^3) ==========================
@@ -204,7 +204,7 @@ $ ./task6_disassemble.sh
 // ======================= END O(N^3) ==========================
 ```
 
-### gemm_accum2
+### 5.3. gemm_accum2
 
 ``` asm
 // ======================= O(N^3) ==========================
@@ -239,7 +239,7 @@ $ ./task6_disassemble.sh
 // ======================= END O(N^3) ==========================
 ```
 
-### Final Verdict
+## 6. Final Verdict
 
 * From the disassembled kernels, we can observe that for **-O2** compiler optimization, both the **unrolled** and **accum** versions generate equivalent assembly instructions.
 * Therefore, there is no noticeable difference between the two versions (it is unclear why **accum** versions’ **simTicks** is slightly lower than that of **unroll**)
