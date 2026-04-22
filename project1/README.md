@@ -26,9 +26,8 @@ Baseline results for the original GEMM implementation without any optimizations:
 | **CPU Model** | atomic | atomic | atomic | timing | timing | timing |
 | **simTicks** | 2,914,252,500 | 17,942,504,500 | 136,773,404,000 | 38,238,680,00 | 69,265,981,500 | 683,919,361,000 |
 | **simInsts** | 5,016,785 | 31,255,470 | 238,966,623 | 5,016,800 | 31,249,448 | 238,966,803 |
-| **Correctness** | yes | yes | yes | yes | yes | yes |
 
-### 3.2. Optimized Results (with Transposition + dmac)
+### 3.2. Optimized Results (Transposition + dmac)
 
 Results for the optimized GEMM with matrix transposition and custom dmac instruction:
 
@@ -37,7 +36,6 @@ Results for the optimized GEMM with matrix transposition and custom dmac instruc
 | **CPU Model** | atomic | atomic | atomic | timing | timing | timing |
 | **simTicks** | 2,898,054,000 | 17,127,116,000 | 129,089,210,000 | 36,918,835,00 | 44,493,625,000 | 414,406,519,500 |
 | **simInsts** | 4,672,287 | 28,317,996 | 214,643,741 | 4,672,086 | 28,318,256 | 214,643,845 |
-| **Correctness** | yes | yes | yes | yes | yes | yes |
 
 ### 3.3. Performance Summary
 
