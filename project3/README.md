@@ -1,12 +1,16 @@
-# Project 3. Memory-System-Aware GEMM
+# Project 3. Memory-System-Aware Access Pattern Optimization
 
-## 1. Quick Start
+## 1. Introduction
+
+This project investigates how memory access patterns affect the performance of General Matrix Multiply (GEMM) by implementing and comparing three loop variants — a naive ijk baseline, a transposed-B version, and an ikj stationary-A version — each designed to improve L1 data cache utilization. The implementations are profiled using gem5 simulation under two CPU models (TimingSimpleCPU and MinorCPU) across matrix sizes N = 64, 128, and 256, with an additional cache-size sensitivity analysis at N = 128.
+
+## 2. Quick Start
 
 ``` bash
 $ python3 run_all_template.sh
 ```
 
-## 2. GEMM Optimization
+## 3. GEMM Optimization
 
 ## Baseline
 
@@ -78,7 +82,7 @@ void gemm_ikj_stream(const std::vector<int32_t>& A,
 
 - Keeping A input stationary instead of transposing A matrix at function entry.
 
-## 3. System Under Simulation
+## 4. System Under Simulation
 
 ### TimingSimple CPU
 
@@ -92,7 +96,7 @@ void gemm_ikj_stream(const std::vector<int32_t>& A,
 
 <p align="center"><img src="images/minor.svg" alt="Minor CPU"/></p>
 
-## 4. Result
+## 5. Result
 
 ### Baseline Run
 
@@ -133,7 +137,7 @@ void gemm_ikj_stream(const std::vector<int32_t>& A,
 | 128 | transpose_b | 32 | TimingSimpleCPU | 46,380,657,500 | 31,310,524 | 0.130004 | 24,490,079,500 |
 | 128 | transpose_b | 64 | TimingSimpleCPU | 31,559,084,000 | 31,310,525 | 0.021787 | 9,190,697,000 |
 
-## 5. Conclusion
+## 6. Conclusion
 
 - Both `gemm_transpose_b` and `gemm_ikj_stream` benefit around 35% when N = 256, while the benefit is insignificant when N = 64, 128.
 - `gemm_transpose_b` has slightly better performance than the `gemm_ikj_stream` version according to the Gem5 simulation result.

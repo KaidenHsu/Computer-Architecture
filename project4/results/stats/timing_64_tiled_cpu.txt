@@ -1,0 +1,39 @@
+$ /opt/gem5/build/RISCV/gem5.opt -d /work/results/raw/timing_64_tiled_cpu scripts/run_timing.py --binary gemm_accel.riscv --n 64 --mode tiled_cpu
+
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started May 31 2026 18:09:20
+gem5 executing on b6b1e8773f22, pid 318816
+command line: /opt/gem5/build/RISCV/gem5.opt -d /work/results/raw/timing_64_tiled_cpu scripts/run_timing.py --binary gemm_accel.riscv --n 64 --mode tiled_cpu
+
+[run data]
+N=64
+mode=tiled_cpu
+tile_size=32
+checksum=9624005687514185728
+correct=yes
+
+[accelerator counters]
+offload_calls=0
+modeled_macs=0
+transfer_bytes=0
+setup_cycles=0
+modeled_compute_cycles=0
+
+[cpu counters]
+modeled_macs=262144
+residual_loop_instrs=524288
+
+[estimated energy]
+energy=367002
+
+simTicks                                   2663856500                       # Number of ticks simulated (Tick)
+simInsts                                      3304665                       # Number of instructions simulated (Count)
+board.processor.cores.core.numCycles          5327713                       # Number of cpu cycles simulated (Cycle)
+board.cache_hierarchy.l1dcaches.overallMisses::total         3704                       # number of overall misses (Count)
+board.cache_hierarchy.l1dcaches.overallHits::total       904891                       # number of overall hits (Count)
+board.cache_hierarchy.l1icaches.overallMisses::total         1497                       # number of overall misses (Count)

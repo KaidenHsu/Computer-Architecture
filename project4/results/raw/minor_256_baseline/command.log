@@ -1,0 +1,33 @@
+$ /opt/gem5/build/RISCV/gem5.opt -d /work/results/raw/minor_256_baseline scripts/run_minor.py --binary gemm_accel.riscv --n 256 --mode baseline
+
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started May 31 2026 18:14:46
+gem5 executing on b6b1e8773f22, pid 322611
+command line: /opt/gem5/build/RISCV/gem5.opt -d /work/results/raw/minor_256_baseline scripts/run_minor.py --binary gemm_accel.riscv --n 256 --mode baseline
+
+[run data]
+N=256
+mode=baseline
+tile_size=0
+checksum=10226002713532170240
+correct=yes
+
+[accelerator counters]
+offload_calls=0
+modeled_macs=0
+transfer_bytes=0
+setup_cycles=0
+modeled_compute_cycles=0
+
+[cpu counters]
+modeled_macs=16777216
+residual_loop_instrs=50331648
+
+[estimated energy]
+energy=2.68435e+07
+
