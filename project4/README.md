@@ -77,7 +77,7 @@ The table below summarizes the offload parameters and observed counters for N=64
 
 ## 6. Experimental Methodology 
 
-I decided how much `cpu_ctrs.residual_loop_instrs` to accumulate in each inner loop iteration from the objdump of the `gemm_accel.cpp`'s assembly.
+The `cpu_ctrs.residual_loop_instrs` accumulation value in each inner loop iteration is decided by inspecting the disassembly (`gemm_accel.riscv`) of `gemm_accel.cpp`.
 
 ``` bash
 $ make inspect-asm
