@@ -27,4 +27,4 @@ inspect_asm: $(TARGET)
 	$(OBJDUMP) $(OBJDUMP_FLAGS) $(TARGET) > src/gemm_accel.asm
 
 clean:
-	rm -f $(TARGET) *.o
+	rm -f $(TARGET) *.o *.riscv
