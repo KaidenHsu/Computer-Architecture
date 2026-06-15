@@ -1,8 +1,8 @@
-# Week 6 Lab. Branch Prediction and Performance
+# Week 6 Lab. Branch Patterns, Predictability, and Control Flow
 
 ## 1. Introduction
 
-This lab explores how branch prediction affects CPU performance by running three exercises that progressively isolate different sources of prediction overhead — branch pattern regularity, predictability, and direct versus indirect control flow. Students will learn to recognize which code patterns stress the branch predictor, interpret simulation metrics such as IPC and cycle count to quantify that stress, and connect low-level microarchitectural behavior to decisions made at the source-code level.
+This lab explores **how branch prediction affects CPU performance** by running three exercises that progressively isolate different sources of prediction overhead — branch pattern regularity, predictability, and direct versus indirect control flow. Students will learn to recognize which code patterns stress the branch predictor, interpret simulation metrics such as IPC and cycle count to quantify that stress, and connect low-level microarchitectural behavior to decisions made at the source-code level.
 
 ## 2. Workflow
 
@@ -186,10 +186,10 @@ static uint64_t run_indirect(long iters) {
 
 The three labs together paint a consistent picture of where branch prediction overhead actually lives.
 
-Lab 1 showed that the predictor handles structural regularity well regardless of pattern shape — loop, alternating, and correlated branches all landed within a narrow 2.06–2.25 IPC band. The correlated mode, despite having two branches per iteration, achieved the highest IPC (2.252), confirming that a history-based predictor exploits inter-branch correlation effectively.
+**Lab 1** showed that the predictor handles structural regularity well regardless of pattern shape — loop, alternating, and correlated branches all landed within a narrow 2.06–2.25 IPC band. The correlated mode, despite having two branches per iteration, achieved the highest IPC (2.252), confirming that a history-based predictor exploits inter-branch correlation effectively.
 
-Lab 2 revealed the true cost of unpredictability: replacing a 63/64-taken pattern with a random coin flip increased cycle count by 69% (17.7M → 29.9M) and inflated instruction count by 45% (60.1M → 87.4M) due to pipeline flushes forcing re-execution of discarded speculative work. IPC dropped from 3.390 to 2.924 — the gap is entirely attributable to mispredict recovery stalls, since the arithmetic payload is identical.
+**Lab 2** revealed the true cost of unpredictability: replacing a 63/64-taken pattern with a random coin flip increased cycle count by 69% (17.7M → 29.9M) and inflated instruction count by 45% (60.1M → 87.4M) due to pipeline flushes forcing re-execution of discarded speculative work. IPC dropped from 3.390 to 2.924 — the gap is entirely attributable to mispredict recovery stalls, since the arithmetic payload is identical.
 
-Lab 3 showed that indirect branches carry overhead even when the dispatch sequence is periodic. Switching from direct calls to function-pointer dispatch through a `(i ^ (i >> 2)) & 3` index increased cycles by 77% (6.6M → 11.8M) and dropped IPC from 2.127 to 1.902. The extra instruction count (14.1M → 22.4M) reflects the pointer load and dereference overhead on top of the target mispredictions themselves.
+**Lab 3** showed that indirect branches carry overhead even when the dispatch sequence is periodic. Switching from direct calls to function-pointer dispatch through a `(i ^ (i >> 2)) & 3` index increased cycles by 77% (6.6M → 11.8M) and dropped IPC from 2.127 to 1.902. The extra instruction count (14.1M → 22.4M) reflects the pointer load and dereference overhead on top of the target mispredictions themselves.
 
 Going forward, avoid function pointer dispatch in tight loops whenever the call targets can be statically encoded — the indirect branch predictor carries measurable overhead even for periodic patterns, and that cost compounds quickly at high iteration counts.

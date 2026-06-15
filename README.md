@@ -21,7 +21,7 @@ projects and labs for "Computer Architecture (2026 Spring)" in NSYSU, Taiwan
 Projects   | Descriptions
 --------|:-----
 [Week 5 Lab][2-1]| Instruction-Level Parallelism and Out-of-Order Execution
-[Week 6 Lab][2-2]| Branch Prediction and Performance
+[Week 6 Lab][2-2]| Branch Patterns, Predictability, and Control Flow
 
 [2-1]:labs/w5
 [2-2]:labs/w6
