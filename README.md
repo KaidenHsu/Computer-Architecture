@@ -6,10 +6,10 @@ projects for "Computer Architecture (2026 Spring)" in NSYSU, Taiwan
 
  Projects   | Descriptions
 --------|:-----
-[Project1][1-1]| Algorithmic Optimization and Custom Instruction Proposal
-[Project2][1-2]| Loop Unrolling and Multiple Accumulators
-[Project3][1-3]| Memory-System-Aware Access Pattern Optimization
-[Project4][1-4]| Accelerator Offload Granularity Analysis and Energy Modeling
+[Project 1][1-1]| Algorithmic Optimization and Custom Instruction Proposal
+[Project 2][1-2]| Loop Unrolling and Multiple Accumulators
+[Project 3][1-3]| Memory-System-Aware Access Pattern Optimization
+[Project 4][1-4]| Accelerator Offload Granularity Analysis and Energy Modeling
 
 [1-1]: projects/project1/
 [1-2]: projects/project2/
@@ -20,7 +20,7 @@ projects for "Computer Architecture (2026 Spring)" in NSYSU, Taiwan
 
 Projects   | Descriptions
 --------|:-----
-[W6 Lab][2-1]| Branch Prediction and Performance
+[Week 6 Lab][2-1]| Branch Prediction and Performance
 
 [2-1]:labs/w6
 
