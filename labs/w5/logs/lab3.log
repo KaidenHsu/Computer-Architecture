@@ -1,0 +1,24 @@
+== accumulators=1 ==
+sim_insts        3714938
+sim_seconds      0.000867
+host_seconds     6.43
+num_cycles       1733901
+ipc              2.142532
+== accumulators=2 ==
+sim_insts        12515005
+sim_seconds      0.001867
+host_seconds     15.75
+num_cycles       3733816
+ipc              3.351800
+== accumulators=4 ==
+sim_insts        13715005
+sim_seconds      0.001867
+host_seconds     16.58
+num_cycles       3733816
+ipc              3.673187
+== accumulators=8 ==
+sim_insts        15315005
+sim_seconds      0.002067
+host_seconds     22.73
+num_cycles       4134126
+ipc              3.704533

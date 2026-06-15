@@ -1,0 +1,39 @@
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started Mar 24 2026 02:19:50
+gem5 executing on 2c3465f0da9c, pid 4879
+command line: /opt/gem5/build/RISCV/gem5.opt -d m5out/lab2_minor /opt/gem5/configs/deprecated/example/se.py --cpu-type=MinorCPU --caches --l1i_size=32kB --l1d_size=32kB --cmd=./lab2_ooo.riscv '--options=200000 32768'
+
+**** REAL SIMULATION ****
+21095595072370240
+Exiting @ tick 11823051500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started Mar 24 2026 02:20:09
+gem5 executing on 2c3465f0da9c, pid 5098
+command line: /opt/gem5/build/RISCV/gem5.opt -d m5out/lab2_o3 /opt/gem5/configs/deprecated/example/se.py --cpu-type=O3CPU --caches --l1i_size=32kB --l1d_size=32kB --cmd=./lab2_ooo.riscv '--options=200000 32768'
+
+**** REAL SIMULATION ****
+21095595072370240
+Exiting @ tick 2906498000 because exiting with last active thread context
+== MinorCPU ==
+sim_insts        3246368
+sim_seconds      0.011823
+host_seconds     14.94
+num_cycles       23646103
+ipc              0.137290
+
+== O3CPU ==
+sim_insts        3246368
+sim_seconds      0.002906
+host_seconds     15.71
+num_cycles       5812997
+ipc              0.558467

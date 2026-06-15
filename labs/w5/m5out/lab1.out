@@ -1,0 +1,66 @@
+root@2c3465f0da9c:/work# ./run_lab1.sh
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started Mar 24 2026 02:18:22
+gem5 executing on 2c3465f0da9c, pid 3956
+command line: /opt/gem5/build/RISCV/gem5.opt -d m5out/lab1_indep /opt/gem5/configs/deprecated/example/se.py --cpu-type=O3CPU --caches --l1i_size=32kB --l1d_size=32kB --cmd=./lab1_ilp.riscv '--options=indep 500000'
+
+warn: The se.py script is deprecated. It will be removed in future releases of  gem5.
+warn: Base 10 memory/cache size 32kB will be cast to base 2 size 32KiB.
+warn: Base 10 memory/cache size 32kB will be cast to base 2 size 32KiB.
+Global frequency set at 1000000000000 ticks per second
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+src/arch/riscv/isa.cc:321: info: RVV enabled, VLEN = 256 bits, ELEN = 64 bits
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/stats/storage.hh:278: warn: Bucket size (4) does not divide range [1:32] into equal-sized buckets. Rounding up.
+src/base/stats/storage.hh:278: warn: Bucket size (4) does not divide range [1:8] into equal-sized buckets. Rounding up.
+system.remote_gdb: Listening for connections on port 7000
+**** REAL SIMULATION ****
+src/sim/syscall_emul.cc:97: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+26014410
+Exiting @ tick 566840000 because exiting with last active thread context
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started Mar 24 2026 02:18:34
+gem5 executing on 2c3465f0da9c, pid 4129
+command line: /opt/gem5/build/RISCV/gem5.opt -d m5out/lab1_chain /opt/gem5/configs/deprecated/example/se.py --cpu-type=O3CPU --caches --l1i_size=32kB --l1d_size=32kB --cmd=./lab1_ilp.riscv '--options=chain 500000'
+
+warn: The se.py script is deprecated. It will be removed in future releases of  gem5.
+warn: Base 10 memory/cache size 32kB will be cast to base 2 size 32KiB.
+warn: Base 10 memory/cache size 32kB will be cast to base 2 size 32KiB.
+Global frequency set at 1000000000000 ticks per second
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+src/arch/riscv/isa.cc:321: info: RVV enabled, VLEN = 256 bits, ELEN = 64 bits
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/stats/storage.hh:278: warn: Bucket size (4) does not divide range [1:32] into equal-sized buckets. Rounding up.
+src/base/stats/storage.hh:278: warn: Bucket size (4) does not divide range [1:8] into equal-sized buckets. Rounding up.
+system.remote_gdb: Listening for connections on port 7000
+**** REAL SIMULATION ****
+src/sim/syscall_emul.cc:97: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+17274807104975793448
+Exiting @ tick 2067350500 because exiting with last active thread context
+== Independent ==
+sim_insts        3614142
+sim_seconds      0.000567
+host_seconds     8.06
+num_cycles       1133682
+ipc              3.187968
+
+== Chain ==
+sim_insts        5114954
+sim_seconds      0.002067
+host_seconds     14.85
+num_cycles       4134703
+ipc              1.237079

@@ -1,0 +1,13 @@
+== Independent ==
+sim_insts        3614169
+sim_seconds      0.000567
+host_seconds     5.11
+num_cycles       1133938
+ipc              3.187272
+
+== Chain ==
+sim_insts        5114961
+sim_seconds      0.002067
+host_seconds     9.19
+num_cycles       4134687
+ipc              1.237085

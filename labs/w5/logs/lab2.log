@@ -1,0 +1,13 @@
+== MinorCPU ==
+sim_insts        3246357
+sim_seconds      0.011974
+host_seconds     7.34
+num_cycles       23948949
+ipc              0.135553
+
+== O3CPU ==
+sim_insts        3246357
+sim_seconds      0.002937
+host_seconds     12.18
+num_cycles       5873091
+ipc              0.552751

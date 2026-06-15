@@ -1,0 +1,80 @@
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started Mar 24 2026 02:22:11
+gem5 executing on 2c3465f0da9c, pid 6256
+command line: /opt/gem5/build/RISCV/gem5.opt -d m5out/lab3_acc1 /opt/gem5/configs/deprecated/example/se.py --cpu-type=O3CPU --caches --l1i_size=32kB --l1d_size=32kB --cmd=./lab3_accumulators.riscv '--options=1 400000'
+
+**** REAL SIMULATION ****
+8868322262164628260
+Exiting @ tick 867014000 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started Mar 24 2026 02:22:27
+gem5 executing on 2c3465f0da9c, pid 6429
+command line: /opt/gem5/build/RISCV/gem5.opt -d m5out/lab3_acc2 /opt/gem5/configs/deprecated/example/se.py --cpu-type=O3CPU --caches --l1i_size=32kB --l1d_size=32kB --cmd=./lab3_accumulators.riscv '--options=2 400000'
+
+**** REAL SIMULATION ****
+17953909063616300196
+Exiting @ tick 1866984500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started Mar 24 2026 02:23:00
+gem5 executing on 2c3465f0da9c, pid 6762
+command line: /opt/gem5/build/RISCV/gem5.opt -d m5out/lab3_acc4 /opt/gem5/configs/deprecated/example/se.py --cpu-type=O3CPU --caches --l1i_size=32kB --l1d_size=32kB --cmd=./lab3_accumulators.riscv '--options=4 400000'
+
+**** REAL SIMULATION ****
+17987797039664227748
+Exiting @ tick 1866984500 because exiting with last active thread context
+Global frequency set at 1000000000000 ticks per second
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Mar 16 2026 11:40:08
+gem5 started Mar 24 2026 02:23:21
+gem5 executing on 2c3465f0da9c, pid 6983
+command line: /opt/gem5/build/RISCV/gem5.opt -d m5out/lab3_acc8 /opt/gem5/configs/deprecated/example/se.py --cpu-type=O3CPU --caches --l1i_size=32kB --l1d_size=32kB --cmd=./lab3_accumulators.riscv '--options=8 400000'
+
+**** REAL SIMULATION ****
+10289351415757783716
+Exiting @ tick 2067048500 because exiting with last active thread context
+== accumulators=1 ==
+sim_insts        3714949
+sim_seconds      0.000867
+host_seconds     11.39
+num_cycles       1734029
+ipc              2.142380
+
+== accumulators=2 ==
+sim_insts        12515016
+sim_seconds      0.001867
+host_seconds     29.63
+num_cycles       3733970
+ipc              3.351665
+
+== accumulators=4 ==
+sim_insts        13715016
+sim_seconds      0.001867
+host_seconds     17.39
+num_cycles       3733970
+ipc              3.673039
+
+== accumulators=8 ==
+sim_insts        15315016
+sim_seconds      0.002067
+host_seconds     27.64
+num_cycles       4134098
+ipc              3.704560
+
