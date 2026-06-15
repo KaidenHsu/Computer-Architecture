@@ -1,0 +1,13 @@
+== Lab 2 summary ==
+-- predictor=default mode=pred
+sim_insts        60078874
+sim_seconds      0.008862
+host_seconds     90.22
+num_cycles       17723251
+ipc              3.389834
+-- predictor=default mode=unpred
+sim_insts        87367716
+sim_seconds      0.014940
+host_seconds     162.54
+num_cycles       29880535
+ipc              2.923901

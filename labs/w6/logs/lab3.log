@@ -1,0 +1,13 @@
+== Lab 3 summary ==
+-- predictor=default mode=direct
+sim_insts        14118455
+sim_seconds      0.003319
+host_seconds     24.05
+num_cycles       6637217
+ipc              2.127165
+-- predictor=default mode=indirect
+sim_insts        22368596
+sim_seconds      0.005881
+host_seconds     43.37
+num_cycles       11762779
+ipc              1.901642

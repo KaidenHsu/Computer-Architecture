@@ -1,0 +1,19 @@
+== Lab 1 summary ==
+-- predictor=default mode=loop
+sim_insts        7323981
+sim_seconds      0.001713
+host_seconds     25.19
+num_cycles       3425093
+ipc              2.138331
+-- predictor=default mode=alt
+sim_insts        7717401
+sim_seconds      0.001869
+host_seconds     11.50
+num_cycles       3738245
+ipc              2.064445
+-- predictor=default mode=corr
+sim_insts        9317497
+sim_seconds      0.002069
+host_seconds     13.56
+num_cycles       4138013
+ipc              2.251684
