@@ -1,6 +1,6 @@
 # Computer Architecture
 
-projects for "Computer Architecture (2026 Spring)" in NSYSU, Taiwan
+projects and labs for "Computer Architecture (2026 Spring)" in NSYSU, Taiwan
 
 ## Projects
 
